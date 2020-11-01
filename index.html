@@ -135,13 +135,23 @@
 			<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
 				id="first">
 			<div class="content">
-			<h2>Analyzing specific data</h2>
+				<h2>Analyzing specific data</h2>
 				 When dealing with a large set of data, sometimes you need to select a specific row or column which contains the data of interest to analyze.
-				 <p></p> 
-				 <p> df.groupby(df.flankers)[['rt', 'error']].count()
+				 <p></p> The following are the results of analyzing a video games dataset
+				 <p> Compare the sales in each location by genre of game.
+				 <p> Genresales = df.groupby(['Genre']).sum().loc[:, 'NA_Sales':'Global_Sales']
 				<p></p>
-				<img src="images/GroupBy.jpg" width='250' height='340' alt="" />
-				 
+				<img src="images/genre.jpg"  alt="" />
+				<p> The following is a comparision of Wii sales across different locations
+				<p> Wiisales = df.groupby(['Platform']).sum().loc['Wii', 'NA_Sales':'Global_Sales']
+				<p>	print(Wiisales)
+					<p></p>
+					<img src="images/Wii.jpg"  alt="" />
+				<p> To be even more selective, we can find the percentage of Wii sales in North America alone.
+					<p>	print(Wiisales['NA_Sales']/ Wiisales['Global_Sales'] *100</p>
+					<p> >Output: 54.78628697219202   #Therefore 54.8% of Wii sales are in North America
+					
+
 	
 
 	</ul>

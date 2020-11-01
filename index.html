@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Portofolio by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="divided">
+
+		<!-- One -->
+		<section
+			class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+			<div class="content">
+				<h1>Nour Mohamed's Portofolio</h1>
+				<p class="major">A showcase of my abilities using Python</a>.</p>
+				<ul class="actions stacked">
+					<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+				</ul>
+			</div>
+			<div class="image">
+				<img src="images/banner.jpg" alt="" />
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
+			id="first">
+			<div class="content">
+				<h2>The power of appending and the for loop</h2>
+				<p> IDs = ['s10', 's12', 's13', 's14', 's15']
+					<p> The purpose of this question is to read in the fies above in a for loop to find the mean reaction time for each partiant, in millisecond.
+				<p># We start by creating an empty variable to append your converted values to.
+					<p>val = [ ]
+					<p> # Write your loop below:
+						<p> for ID in IDs : 
+						<p> filename = ID + '.csv'  # This line is necessary to turn every ID into filenames
+						<p> val = pd.read_csv(filename) # This line is used to read in every file.
+						<p> val_rt_ms = [ ]  # This array will contain all reaction times in milliseconds.
+						<p> for x in val['rt']   # This for loop will be used to load all rt in millisecond into the empty array above.
+							<p>		val_rt_ms.append(x * 1000)  #This line is used to conevrts the values into milliseconds.
+						<p> val['rt'] = val_rt_ms # This line switches all columns in the original dataframe reaction time column into the millisecond values converted above.
+						<p> congruent = val.loc[(val['flankers'] == 'congruent')]  #This lines attaches all the rows containing congruent data to the congruent array.
+						<p> print ('The mean reaction time for the congruent trials is' + str(round(congruent['rt'].mean( ), 3)) + 'ms') 		 # This line is used to round reaction time to 3 decimals and print a line which makes is easy to read the data for each participant.
+						<p> 	> Output = 416.08 ms
+
+				</ul>
+			</div>
+			<div class="image">
+				<img src="images/spotlight01.jpg" alt="" />
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+			<div class="content">
+				<h2>From an array to a dictionnary</h2>
+				<p> The following is a list of reaction times from assignment 2
+				<p>rt = ['0.39425281', '0.44209436', '0.53476437', '0.56590672']
+				<p> The following is a list of names I created corresponding to the above reaction times:
+				<p> Participants = ['John', 'Connor', 'Mary', 'Sam'] 
+				<p> To create a dictionary which will be useful to acces the data easier, we create a dictionnary:
+				<p> Reactiontimes = {'John' : '0.39425281', 'Connor' : '0.44209436', 'Mary' : '0.53476437', 'Sam' : '0.56590672'}
+				<p> To get the values of the reaction times of one of the participants we use the following code:
+				<p> print(Reactiontimes['John'])
+				<p> > Output: '0.39425281'
+				<p> To take it a step further, a couple functions can be used to showcase the variability Python posses in dealing with dictionaries.
+				<p> del(Reactiontimes['John'])   # This deleltes the key for the John and its value from the dictionary.
+
+				
+			</div>
+			<div class="image">
+				<img src="images/spotlight02.jpg" alt="" />
+			</div>
+		</section>
+
+		<!-- Four -->
+		<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+			<div class="content">
+				<h2>Pandas</h2>
+				<p> Pandas is a powerful tool, which can be used to easily manipulate data structures and analyze data.
+				<p> import pandas as pd  # This line is used to import pandas 
+				<p> dat= pd.read_csv('s10.csv')  # This line converts comma-separated-values (csv) into a pandas dataframe, which is way easier to use and manipulate as it put the data into table form.
+				<p> dat.head() #This function is used to view the beginning rows of the pandas DataFrame created
+					<img src="images/pd.head.jpg" alt="" />
+				<p> One of the main steps in being ablle to analyze data using Pandas, is cleaning the data:
+					<p> df.isna().sum() #This gives us a summary of the missing values in each column
+					<p> df.dropna() # This is used to completely remove rows which contain missing values.
+						<p> df = df[df.block != 'practice']  # This line removes all practice trials from the table.
+					<p> Such pandas DataFrame can be used for various statisical analysis
+				<p> dat['rt'][0:25].mean()   #Here I calculated the mean reaction times for the first 25 trials
+				<p> > Output: 405.6557296799999
+				<p> dat[dat.flankers=='congruent']['rt'].mean())
+				<p> > Output: 416.0478079416664
+			
+			</div>
+			<div class="image">
+				<img src="images/spotlight03.jpg" alt="" />
+			</div>
+		</section>
+		<!-- Five -->
+		<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+			<div class="content">
+				<h2> Plotting with Python</h2>
+
+				<p> Plotting with Python requires matplotlip which is a powerful tool to make visualizing data easier.
+				<p> import matplotlib.pyplot as plt #This line is required to call in the matplotlib tool
+				<p> plt.title('Distribution of RTs')
+				<p> plt.xlabel('RT')
+				<p> plt.ylabel('Count')
+				<p> plt.hist(rt, bins= 20)
+				<p> plt.show()
+				<p></p>	
+				<img src="images/plot.png" width="600" height="400" alt="" />
+				
+				
+			</div>
+			<div class="image">
+				<img src="images/spotlight02.jpg" alt="" />
+			</div>
+		</section>
+		<!-- Six -->
+			<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
+				id="first">
+			<div class="content">
+			<h2>Analyzing specific data</h2>
+				 When dealing with a large set of data, sometimes you need to select a specific row or column which contains the data of interest to analyze.
+				 <p></p> 
+				 <p> df.groupby(df.flankers)[['rt', 'error']].count()
+				<p></p>
+				<img src="images/groupby.jpg" width='250' height='340' alt="" />
+				 
+	
+
+	</ul>
+</div>
+<div class="image">
+	<img src="images/spotlight01.jpg" alt="" />
+</div>
+</section>
+		<!-- Seven -->
+		<section class="wrapper style1 align-center">
+			<div class="inner">
+				<h2>Thank you for reading my portofolio, for any comments or feedback message me down below.</h2>
+				<p></p>
+			</div>
+
+			<!-- Gallery -->
+			<div class="gallery style2 medium lightbox onscroll-fade-in">
+				<article>
+					<a href="images/gallery/fulls/01.jpg" class="image">
+						<img src="images/gallery/thumbs/01.jpg" alt="" />
+					</a>
+					<div class="caption">
+						<h3>The Power of appending and the for loop</h3>
+						<p></p>
+						<ul class="actions fixed">
+							<li><span class="button small">Details</span></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<a href="images/gallery/fulls/02.jpg" class="image">
+						<img src="images/gallery/thumbs/02.jpg" alt="" />
+					</a>
+					<div class="caption">
+						<h3>From an array to a dictionnary</h3>
+						<p>
+						<ul class="actions fixed">
+							<li><span class="button small">Details</span></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<a href="images/gallery/fulls/03.jpg" class="image">
+						<img src="images/gallery/thumbs/03.jpg" alt="" />
+					</a>
+					<div class="caption">
+						<h3>Pandas</h3>
+						<p></p>
+						<ul class="actions fixed">
+							<li><span class="button small">Details</span></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<a href="images/gallery/fulls/04.jpg" class="image">
+						<img src="images/gallery/thumbs/04.jpg" alt="" />
+					</a>
+					<div class="caption">
+						<h3>Plotting with Python</h3>
+						<p></p>
+						<ul class="actions fixed">
+							<li><span class="button small">Details</span></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<a href="images/gallery/fulls/05.jpg" class="image">
+						<img src="images/gallery/thumbs/05.jpg" alt="" />
+					</a>
+					<div class="caption">
+						<h3>Analyzing specific data</h3>
+						<p></p>
+						<ul class="actions fixed">
+							<li><span class="button small">Details</span></li>
+						</ul>
+					</div>
+				</article>
+				
+		</section>
+
+
+		<!-- Seven -->
+		<section class="wrapper style1 align-center">
+			<div class="inner medium">
+				<h2>Get in touch</h2>
+				<form method="post" action="#">
+					<div class="fields">
+						<div class="field half">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" value="" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" value="" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+					</div>
+					<ul class="actions special">
+						<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+					</ul>
+				</form>
+
+			</div>
+		</section>
+
+
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
